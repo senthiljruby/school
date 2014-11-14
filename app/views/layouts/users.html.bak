@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <head>
+    <meta charset="utf-8" />
+    <title>SMS - School Management System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- stylesheet -->
+    
+    <link rel="stylesheet" href="assets/css/login_reset.css" type="text/css" media="screen" charset="utf-8" />
+    <link rel="stylesheet" href="assets/css/login.css" type="text/css" media="screen" charset="utf-8" />
+    <link rel="stylesheet" href="assets/css/login_checkbox.css" type="text/css" media="screen" charset="utf-8" />
+    <!-- javascript -->
+    <script src="jquery.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        var d = "placeholder" in document.createElement("input");
+        if (!d){
+          $("input[placeholder]").each(function(){
+            $(this).val(element.attr("placeholder")).addClass('placeholder');
+          }).bind('focus',function(){
+            if ($(this).val() == element.attr('placeholder')){
+              $(this).val('').removeClass('placeholder');
+            }
+          }).bind('blur',function(){
+            if ($(this).val() == ''){
+              $(this).val(element.attr("placeholder")).addClass('placeholder');
+            }
+          });
+        }
+      });
+    </script>
+  </head>
+  
+  <body>
+
+    <div id="wrap-middle">
+      <div id="wrap-title">
+        <h1>Login Freebie</h1>
+      </div>
+      
+      <div id="wrap-login">
+        <div id="box-login">
+          <div id="box-login-top">
+            <form>
+              <fieldset>
+                <input type="text" id="username" placeholder="username" class="form-text">
+              </fieldset>
+              <fieldset>
+                <input type="password" id="password" placeholder="password" class="form-text">
+              </fieldset>
+              <fieldset class="form-actions">
+                <input type="submit" name="Log In">
+                <a href="#" alt="#">Register</a>
+              </fieldset>
+            </form>
+          </div>
+          <div id="box-login-bottom">
+            <div id="footer-login">
+              <span>Remember my password</span>
+              <input type="checkbox" id="remember" name="remember" class="regular-checkbox" />
+                <label for="remember"></label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

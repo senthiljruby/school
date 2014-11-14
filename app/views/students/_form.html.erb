@@ -1,0 +1,99 @@
+<!-- BEGIN PAGE CONTAINER-->
+<div class="page-content">
+  <div class="content">
+    <div id="container">
+      <!-- BEGIN BASIC FORM ELEMENTS-->
+      <div class="row-fluid">
+        <%= form_for @student, :html => {:style=>"margin-top:20px"}  do |f| %>
+          <% if @student.errors.any? %>
+            <div class="alert">
+              <button class="close" data-dismiss="alert"></button>
+            <h2>Form is invalid</h2>
+            <ul>
+              <% for message in @student.errors.full_messages %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+            </div>
+          <% end %>
+          <div class="span10">
+            <div class="grid simple">
+              <div class="grid-title no-border">
+                <h4>Add new Student</h4>
+              </div>
+              <div class="grid-body no-border"> <br>
+                <div class="row-fluid">
+                  <div class="span8">
+                    <div class="control-group">
+                      <label class="control-label">Name</label>
+                      <span class="help">e.g. "Senthil Kumar"</span>
+                      <div class="controls">
+                        <%= f.text_field :name, :class=>"span12", :placeholder => "Student Name"  %>
+                      </div>
+                    </div>
+                    <div class="control-group">
+                      <label class="control-label">Father Name</label>
+                      <span class="help">e.g. "Bhaskaran"</span>
+                      <div class="controls">
+                        <%= f.text_field :father_name, :class=>"span12", :placeholder => "Father Name"  %>
+                      </div>
+                    </div>
+                    <div class="control-group">
+                      <label class="control-label">Date of Birth</label>
+                      <span class="help">e.g. "17/11/1986"</span>
+                      <div class="controls">
+                        <div class="input-append success date span12">
+                          <%= f.text_field :dob, :class=>"span12", :placeholder => "Father Name",  
+                              :value =>  @student.dob.blank? ? Date.today.strftime("%d/%m/%Y") : @student.dob, "data-date" => "17/4/1986" %>
+                          <span class="add-on"><span class="arrow"></span>
+                          <i class="icon-th"></i></span> </div>
+                      </div>
+                    </div>
+                    <div class="control-group">
+                      <label class="control-label">Standard</label>
+                      <span class="help">e.g. "II"</span>
+                      <div class="controls">
+                        <%= f.select :standard, options_for_select((1..12).to_a), {}, :id=>"source_standard", :style=>"width:100%" %>
+                      </div>
+                    </div>
+                    <div class="control-group">
+                      <label class="control-label">Standard</label>
+                      <span class="help">e.g. "D"</span>
+                      <div class="controls">
+                        <%= f.select :section, options_for_select(('A'..'Z').to_a), {} , :id=>"source_section", :style=>"width:100%" %>
+                      </div>
+                    </div>
+                    <div class="control-group">
+                      <label class="control-label">Mobile Number</label>
+                      <span class="help">e.g. "987654321"</span>
+                      <div class="controls">
+                        <%= f.text_field :phone_number, :class=>"span12", :placeholder => "Mobile Number"  %>
+                      </div>
+                    </div>
+                    <div class="control-group">
+                      <label class="control-label">Email</label>
+                      <span class="help">e.g. "test@example.com"</span>
+                      <div class="controls">
+                        <%= f.text_field :email, :class=>"span12", :placeholder => "Email"  %>
+                      </div>
+                    </div>
+                    <div class="control-group">
+                      <label class="control-label">Address</label>
+                      <span class="help">e.g. "123, 2nd street, Pondicherry"</span>
+                      <div class="controls">
+                        <%= f.text_area :address, :class=>"span12", :placeholder => "Address", :rows => "10"  %>
+                      </div>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Create Student</button>
+                    <a href="#" class="btn btn-primary">Clear</a>
+                    <a href="<%= students_path %>" class="btn btn-primary">Back</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

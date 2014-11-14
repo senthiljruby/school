@@ -1,0 +1,64 @@
+<!-- BEGIN PAGE CONTAINER-->
+<div class="page-content">
+  <div class="content">
+    <div id="container">
+      <div class="row-fluid">
+        <div class="span12">
+          <div class="grid simple ">
+            <div class="grid-title">
+              <h4>Listing <span class="semi-bold">Students</span></h4>
+              <div class="tools"> 
+                <a href="javascript:;" class="collapse"></a>
+                <a href="javascript:;" class="reload"></a>
+              </div>
+            </div>
+            
+            <div class="grid-body ">
+              <div class="row-fluid">
+                <table class="table table-hover table-condensed" id="example">
+                  <%= form_tag(students_path, :method => "get", id: "search-form") do %>
+                    <div class="input-prepend inside search-form no-boarder">
+                      <span class="add-on"> 
+                        <a href="#" class="" >
+                          <div class="iconset top-search"></div>
+                        </a>
+                      </span>
+                        <%= text_field_tag :search, params[:search], placeholder: "Search Students", :class=>"no-boarder", :style=>"width:250px;" %></td>
+  <!--                     <input name="" type="text"  class="no-boarder " placeholder="Search Students" style="width:250px;"> -->
+                    </div>
+                  <% end %>
+                  <thead>
+                    <tr>
+                      <th width="10%">Name</th>
+                      <th width="10%" data-hide="phone,tablet">Father name</th>
+                      <th width="10%" data-hide="phone,tablet">Phone number</th>
+                      <th width="10%" data-hide="phone,tablet">Email</th>
+                      <th width="10%" data-hide="phone,tablet">Address</th>
+                      <th width="6%">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% @students.each do |student| %>
+                      <tr >
+                        <td valign="middle"><%= student.name %></td>
+                        <td valign="middle"><span class="muted"><%= student.father_name %></span></td>
+                        <td valign="middle"><span class="muted"><%= student.phone_number %></span></td>
+                        <td valign="middle"><span class="muted"><%= student.email %></span></td>
+                        <td valign="middle"><span class="muted"><%= student.address %></span></td>
+                        <td valign="middle">
+                          <%= link_to 'Edit', edit_student_path(student) %>
+                          <%= link_to 'Delete', student, method: :delete, data: { confirm: 'Are you sure?' } %>
+                        </td>
+                      </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+                <%= will_paginate @students %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

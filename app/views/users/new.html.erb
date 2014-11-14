@@ -1,0 +1,151 @@
+<!-- BEGIN BASIC FORM ELEMENTS-->
+<div class="row-fluid">
+  <%= form_for @user, :html => {:style=>"margin-top:20px"}  do |f| %>
+    <% if @user.errors.any? %>
+      <div class="alert">
+        <button class="close" data-dismiss="alert"></button>
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @user.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+      </div>
+    <% end %>
+    <div class="span8">
+      <div class="grid simple">
+        <div class="grid-title no-border">
+          <h4>Register</h4>
+        <div class="grid-body no-border"> <br>
+          <div class="row-fluid">
+            <div class="span8">
+              <div class="control-group">
+                <label class="control-label">Your Name</label>
+                <span class="help">e.g. "Senthil Kumar Bhaskaran"</span>
+                <div class="controls">
+                  <%= f.text_field :username, :class=>"span12", :placeholder => "Username"  %>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">Email</label>
+                <span class="help">e.g. "test@example.com"</span>
+                <div class="controls">
+                  <%= f.text_field :email, :class=>"span12", :placeholder => "Email"  %>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">Password</label>
+                <span class="help">e.g. "password"</span>
+                <div class="controls">
+                  <%= f.text_field :password, :class=>"span12", :placeholder => "password"  %>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">Password Confirmation</label>
+                <span class="help">e.g. "password"</span>
+                <div class="controls">
+                  <%= f.text_field :password_confirmation, :class=>"span12", :placeholder => "password"  %>
+                </div>
+              </div>
+              <div class="row-fluid">
+                <label><small>By creating an account you have read and agree to the <a href="#">terms and conditions</a>.</small></label>
+                <div class="checkbox check-success  ">
+                  <input id="checkbox2" type="checkbox" value="1" checked="checked">
+                  <label for="checkbox2">I agree</label>
+                </div>
+              </div>
+              <button class="btn btn-primary" type="submit">Register</button>
+              <a href="#" class="btn btn-primary">Clear</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+<!-- END BASIC FORM ELEMENTS-->  
+
+<!-- <div class="row"> -->
+
+<%#= form_for @user, :html => {:class=>"form-signin"}  do |f| %>
+   <!--  <%# if @user.errors.any? %>
+      <div class="alert">
+        <button class="close" data-dismiss="alert"></button>
+      <h2>Form is invalid</h2>
+      <ul>
+        <%# for message in @user.errors.full_messages %>
+          <li><%#= message %></li>
+        <%# end %>
+      </ul>
+      </div>
+    <%# end %>
+    <fieldset>
+      <legend>Register</legend>
+      <div class="field">
+        <%#= f.text_field :username, :class=>"input-block-level", :placeholder => "Username"  %>
+      </div>
+      <div class="field">
+        <%#= f.text_field :email, :class=>"input-block-level", :placeholder => "Email"  %>
+      </div>
+      <div class="field">
+        <%#= f.text_field :password, :class=>"input-block-level", :placeholder => "password"  %>
+      </div>
+      <div class="field">
+        <%#= f.text_field :password_confirmation, :class=>"input-block-level", :placeholder => "password confirmation"  %>
+      </div>
+      <div class="field"> 
+        <label><small>By creating an account you have read and agree to the <a href="#">terms and conditions</a>.</small></label>
+        <label for="checkbox1"><input id="checkbox1" type="checkbox" required></input> I Agree</label>
+      </div>
+      <button class="btn btn-primary" type="submit">Register</button>
+      <a href="#" class="btn btn-primary">Clear</a>
+    </fieldset>
+  <%# end %>
+</div> -->
+<!-- <div class="row" style="margin-top:10%">
+    <div align="center"><h2>Create an Account</h2></div>
+       <br />
+       <div class="medium-6 medium-centered large-centered large-6 columns">
+     <form data-abide>
+          <div class="name-field">
+          <label>First Name</label>
+          <input type="text" required></input>
+          <small class="error" data-error-message="">A first and last name is required.</small>
+          </div>
+          <div class="name-field">
+          <label>Last Name</label>
+          <input type="text" required></input>
+          <small class="error" data-error-message="">A first and last name is required.</small>
+          </div>
+          <div class="email-field">
+          <label>Email</label>
+        <input id="email" type="email" required></input>
+       <small class="error">An email address is required.</small>
+       </div>
+          <div class="email-field">
+          <label>Re-enter Email</label>
+        <input type="email" required></input>
+       <small class="error">The emails must match.</small>
+       </div>
+
+           <label for="password">Password</label>
+           <input id="password" type="password" required="" name="password"></input>
+           <small class="error"></small>
+
+
+           <label for="confirmPassword">Confirm Password</label>
+           <input id="confirmPassword" type="password" data-equalto="password" required="" name="confirmPassword" data-invalid=""></input>
+           <small class="error" data-error-message="">Passwords must match.</small>
+
+           <label><small>By creating an account you have read and agree to the <a href="#">terms and conditions</a>.</small></label>
+           <input id="checkbox1" type="checkbox" required></input><label for="checkbox1">I Agree</label>
+           <small class="error">You must agree to the terms and conditions.</small>
+          <br />
+          <br />         
+          <button type="submit">Create Account</button>
+          <br />
+          <small>Sign in with <a href="#">Facebook</a>, <a href="#">Google</a>, or <a href="#">Twitter</a>.</small>
+
+      </form>
+      </div>
+</div> -->

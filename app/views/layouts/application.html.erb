@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <head>
+    <meta charset="utf-8" />
+    <title>SMS - School Management System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <%= render 'shared/header/css_files' %>
+  </head>
+  <body>
+    <%= render 'shared/body/header' %>
+    <!-- BEGIN CONTAINER -->
+    <div class="page-container row-fluid">
+      <%= render 'shared/body/sidebar' %>
+      <%= yield %>
+      <%#= render 'shared/body/chat' %>
+    </div>
+    <%= render 'shared/body/js_files' %>
+  </body>
+</html>

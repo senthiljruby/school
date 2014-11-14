@@ -1,0 +1,22 @@
+/*
+ * @freebie: login-freebie
+ * @author: Francisco Neves
+ */
+
+.regular-checkbox { display: none; }
+.regular-checkbox + label {
+	display: block;
+	/*position: absolute; */
+	right: 16px;
+	top: 8px;
+	width: 61px;
+	height: 28px;
+	background: no-repeat center;
+	background-image: url(/assets/img/chk_off.png);
+	cursor: pointer;
+	opacity: 0.8;
+	float: right; }
+
+.regular-checkbox + label:hover { opacity: 1; }
+.regular-checkbox:checked + label { background-image: url(/assets/img/chk_on.png); }
+.regular-checkbox:checked + label:after { background-image: url(/assets/img/chk_on.png); }
