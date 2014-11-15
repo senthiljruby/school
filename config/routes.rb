@@ -1,4 +1,8 @@
 SchoolManagementSystem::Application.routes.draw do
+  get "alerts/quick_sms"
+
+  get "alerts/noticeboard"
+
   # devise_for :users
 
   resources :non_teaching_staffs

@@ -1,0 +1,63 @@
+<!-- BEGIN PAGE CONTAINER-->
+<div class="page-content">
+  <div class="content">
+    <div id="container">
+      <div class="row-fluid">
+        <%= form_tag wishes_send_message_path do %>
+          <div class="span10">
+            <div class="grid simple">
+              <div class="grid-title no-border">
+                <h4>Add new Student</h4>
+              </div>
+              <div class="grid-body no-border"> <br>
+                <div class="row-fluid">
+                  <div class="span8">
+                    <div class="control-group">
+                      <label class="control-label">Mobile Number</label>
+                      <span class="help">e.g. "987654321"</span>
+                      <div class="controls">
+                        <input type="text" name="mobile_number" placeholder="987654321" class="span12" />
+                      </div>
+                    </div>
+                    <div class="control-group">
+                      <label class="control-label">Message</label>
+                      <span class="help">e.g. "Hi !!! Good Morning"</span>
+                      <div class="controls">
+                        <%= text_area_tag :messages, nil, :class=>"span12", :placeholder => "Address", :rows => "10"  %>
+                      </div>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Send</button>
+                    <a href="#" class="btn btn-primary">Clear</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+         <div class="span10">
+          <div class="grid simple">
+            <div class="grid-title no-border">
+              <h4>Message Preview</h4>
+              <hr/>
+            </div>
+            <div class="grid-body no-border"> <br>
+              <div class="row-fluid">
+                <div class="span8">
+                  <div id="preview"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $("#messages").keyup(function(){
+    message = $("#messages").val()
+    message = message //+ " - <%#= signature %>"
+    $("#preview").html(message);
+  });
+</script>
