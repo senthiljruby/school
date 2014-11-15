@@ -1,4 +1,4 @@
-class NonTeachingStaffsController < InheritedResources::Base
+class NonTeachingStaffsController < ApplicationController
   before_filter :authenticate
 
   def index
@@ -10,10 +10,27 @@ class NonTeachingStaffsController < InheritedResources::Base
     end    
   end
   
-  def build_resource_params
-    [params.fetch(:teaching_staff, {}).permit(:full_name, :father_name,
-                                       :date_of_birth, :date_of_joining, :married,
-                                       :email, :address, :mobile, :spouse_name,
-                                       :qualification, :role)]
+  def new
+    @non_teaching_staff = NonTeachingStaff.new
+  end
+
+  def create
+    @non_teaching_staff = NonTeachingStaff.new(params[:teaching_staff])
+    if @non_teaching_staff.save
+      flash[:notice] = "Saved"
+      redirect_to non_teaching_staffs_path
+    else
+      flash[:notice] = "Error"
+    end
+  end
+
+  def show
+    @non_teaching_staff = NonTeachingStaff.find(params[:id])
+  end
+
+  def destroy
+    @non_teaching_staff = NonTeachingStaff.find(params[:id])
+    @non_teaching_staff.destroy
+    redirect_to non_teaching_staffs_path
   end
 end

@@ -23,4 +23,14 @@ class StudentsController < ApplicationController
       flash[:notice] = "Error"
     end
   end
+
+  def show
+    @student = Student.find(params[:id])
+  end
+
+  def destroy
+    @student = Student.find(params[:id])
+    @student.destroy
+    redirect_to students_path
+  end
 end
