@@ -16,11 +16,11 @@ ActiveRecord::Schema.define(:version => 20141116153237) do
   create_table "non_teaching_staffs", :force => true do |t|
     t.string   "full_name"
     t.string   "father_name"
-    t.string   "date_of_birth"
-    t.string   "date_of_joining"
+    t.date     "date_of_birth"
+    t.date     "date_of_joining"
     t.boolean  "married"
     t.string   "spouse_name"
-    t.string   "aniversary_date"
+    t.date     "aniversary_date"
     t.string   "qualification"
     t.string   "role"
     t.string   "email"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(:version => 20141116153237) do
     t.text     "address"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
-    t.string   "dob"
+    t.date     "dob"
     t.string   "standard"
     t.string   "section"
   end
@@ -62,11 +62,11 @@ ActiveRecord::Schema.define(:version => 20141116153237) do
   create_table "teaching_staffs", :force => true do |t|
     t.string   "full_name"
     t.string   "father_name"
-    t.string   "date_of_joining"
-    t.string   "date_of_birth"
+    t.date     "date_of_joining"
+    t.date     "date_of_birth"
     t.boolean  "married"
     t.string   "spouse_name"
-    t.string   "aniversary_date"
+    t.date     "aniversary_date"
     t.string   "qualification"
     t.string   "role"
     t.datetime "created_at",      :null => false
