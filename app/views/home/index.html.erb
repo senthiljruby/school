@@ -9,7 +9,7 @@
         <div class="span3 ">  
           <div class="tiles blue added-margin">
             <div class="tiles-body">
-              <div class="controller">                
+              <div class="controller">            
                 <a href="javascript:;" class="reload"></a>
                 <a href="javascript:;" class="remove"></a>    
               </div>    
@@ -161,16 +161,18 @@
               JOB ANNIVERSARY <strong><%= Date.today.strftime("%d/%m/%Y") %></strong>
             </div>              
             </br>
-            <div class="notification-messages info">
-              <div class="message-wrapper">
-                <div class="heading">
-                  School Meeting
+            <% @job_anniversary_name.each_with_index do |job_anniversary_name, index| %>
+              <div class="notification-messages info">
+                <div class="message-wrapper">
+                  <div class="heading">
+                    <%= job_anniversary_name %>
+                  </div>
                 </div>
-                <div class="description">
-                  Meeting postponed to tomorrow
+                <div class="date pull-right">
+                  <%= @job_anniversary_role[index] %>
                 </div>
               </div>
-            </div>                
+            <% end %>                
           </div>
         </div>          
       </div>  
@@ -186,16 +188,18 @@
               WEDDING ANNIVERSARY <strong><%= Date.today.strftime("%d/%m/%Y") %></strong>
             </div>              
             </br>
-            <div class="notification-messages info">
-              <div class="message-wrapper">
-                <div class="heading">
-                  School Meeting
+            <% @wedding_anniversary_name.each_with_index do |wedding_anniversary_name, index| %>
+              <div class="notification-messages info">
+                <div class="message-wrapper">
+                  <div class="heading">
+                    <%= wedding_anniversary_name %>
+                  </div>
                 </div>
-                <div class="description">
-                  Meeting postponed to tomorrow
+                <div class="date pull-right">
+                  <%= @wedding_anniversary_role[index] %>
                 </div>
               </div>
-            </div>           
+            <% end %>           
           </div>
         </div>          
       </div>  

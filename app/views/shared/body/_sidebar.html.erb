@@ -3,55 +3,59 @@
   <!-- BEGIN SIDEBAR MENU -->  
   <p class="menu-title">BROWSE <span class="pull-right"><a href="javascript:;"><i class="icon-refresh"></i></a></span></p>
   <ul>  
-    <li class="start active ">
+    <li class="start <%= 'active' if (params[:controller] == 'home' && params[:action] == 'index')%>">
       <a href="/">
         <i class="icon-custom-home"></i>
         <span class="title">Dashboard</span>
         <span class="selected"></span>
       </a>
     </li>
-    <li class="">
+    <li class="<%= 'active' if (params[:controller] == 'students' && params[:action] == 'new' || 
+                                 params[:controller] == 'students' && params[:action] == 'index')%>">
       <a href="javascript:;">
         <i class="icon-custom-ui"></i>
         <span class="title">Students</span>
         <span class="arrow "></span>
       </a>
       <ul class="sub-menu">
-        <li > <a href="<%= new_student_path %>"> Add Student </a> </li>
-        <li > <a href="<%= students_path %>"> List Students </a> </li>
+        <li class="<%= 'active' if (params[:controller] == 'students' && params[:action] == 'new') %>"> <a href="<%= new_student_path %>"> Add Student </a> </li>
+        <li class="<%= 'active' if (params[:controller] == 'students' && params[:action] == 'index') %>"> <a href="<%= students_path %>"> List Students </a> </li>
       </ul>
     </li>
-    <li class=""> 
+    <li class="<%= 'active' if (params[:controller] == 'teaching_staffs' && params[:action] == 'new' || 
+                                 params[:controller] == 'teaching_staffs' && params[:action] == 'index')%>"> 
       <a href="javascript:;"> 
         <i class="icon-custom-form"></i> 
         <span class="title">Teachers</span> 
         <span class="arrow "></span>
       </a>
       <ul class="sub-menu">
-        <li > <a href="<%= new_teaching_staff_path %>">Add Teacher</a> </li>
-        <li > <a href="<%= teaching_staffs_path %>">List Teachers</a> </li>
+        <li class="<%= 'active' if (params[:controller] == 'teaching_staffs' && params[:action] == 'new') %>"><a href="<%= new_teaching_staff_path %>">Add Teacher</a> </li>
+        <li class="<%= 'active' if (params[:controller] == 'teaching_staffs' && params[:action] == 'index') %>"><a href="<%= teaching_staffs_path %>">List Teachers</a> </li>
       </ul>
     </li>
-    <li class=""> 
+    <li class="<%= 'active' if (params[:controller] == 'non_teaching_staffs' && params[:action] == 'new' || 
+                                 params[:controller] == 'non_teaching_staffs' && params[:action] == 'index')%>">
       <a href="javascript:;"> 
         <i class="icon-custom-portlets"></i> 
         <span class="title">Non Teaching Staffs</span> 
         <span class="arrow "></span>
       </a>
       <ul class="sub-menu">
-        <li > <a href="<%= new_non_teaching_staff_path %>">Add Non Teaching Staff</a> </li>
-        <li > <a href="<%= non_teaching_staffs_path %>">List Non Teaching Staffs</a> </li>
+        <li class="<%= 'active' if (params[:controller] == 'non_teaching_staffs' && params[:action] == 'new') %>"> <a href="<%= new_non_teaching_staff_path %>">Add Non Teaching Staff</a> </li>
+        <li class="<%= 'active' if (params[:controller] == 'non_teaching_staffs' && params[:action] == 'index') %>"> <a href="<%= non_teaching_staffs_path %>">List Non Teaching Staffs</a> </li>
       </ul>
     </li>
-    <li class=""> 
+    <li class="<%= 'active' if (params[:controller] == 'alerts' && params[:action] == 'quick_sms' || 
+                                 params[:controller] == 'alerts' && params[:action] == 'noticeboard')%>"> 
       <a href="javascript:;">
         <i class="icon-custom-thumb"></i>
         <span class="title">Alerts</span>
         <span class="arrow "></span> 
       </a>
       <ul class="sub-menu">
-        <li > <a href="<%= alerts_quick_sms_path %>"> Quick SMS </a> </li>
-        <li > <a href="<%= alerts_noticeboard_path %>"> Noticeboard </a> </li>
+        <li class="<%= 'active' if (params[:controller] == 'alerts' && params[:action] == 'quick_sms') %>"> <a href="<%= alerts_quick_sms_path %>"> Quick SMS </a> </li>
+        <li  class="<%= 'active' if (params[:controller] == 'alerts' && params[:action] == 'noticeboard') %>"> <a href="<%= alerts_noticeboard_path %>"> Noticeboard </a> </li>
       </ul>
     </li>
   </ul>

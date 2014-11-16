@@ -17,13 +17,13 @@
               <div class="row-fluid">
                 <table class="table table-hover table-condensed" id="example">
                   <%= form_tag(teaching_staffs_path, :method => "get", id: "search-form") do %>
-                    <div class="input-prepend inside search-form no-border">
+                    <div class="input-prepend inside search-form no-boarder">
                       <span class="add-on"> 
                         <a href="#" class="" >
                           <div class="iconset top-search"></div>
                         </a>
                       </span>
-                        <%= text_field_tag :search, params[:search], placeholder: "Search Teachers", :class=>"no-border", :style=>"width:250px;" %></td>
+                        <%= text_field_tag :search, params[:search], placeholder: "Search Teachers", :class=>"no-boarder", :style=>"width:250px;" %></td>
                     </div>
                   <% end %>
                   <thead>
