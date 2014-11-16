@@ -47,6 +47,6 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 group :production do
-  # gem 'rails_12factor'
+  gem 'rails_12factor'
   gem 'pg'
 end
