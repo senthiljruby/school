@@ -10,7 +10,6 @@ class CreateTeachingStaffs < ActiveRecord::Migration
       t.date :aniversary_date
       t.string :qualification
       t.string :role
-
       t.timestamps
     end
   end
