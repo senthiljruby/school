@@ -7,11 +7,12 @@
           <div class="span10">
             <div class="grid simple">
               <div class="grid-title no-border">
-                <h4>Quick SMS</h4>
+                <h4>Noticeboard</h4>
                 <div class="tools"> 
                   <a href="javascript:;" class="collapse"></a>
                   <a href="javascript:;" class="reload"></a>
                 </div>
+                <hr/>
               </div>
               <div class="grid-body no-border"> <br>
                 <div class="row-fluid">
@@ -20,7 +21,7 @@
                       <label class="control-label">Teachers</label>
                       <span class="help">e.g. "Teacher X"</span>
                       <div class="controls">
-                        <select id="teachers" style="width:100%" multiple>
+                        <select id="teachers" name="teachers[]" style="width:100%" multiple>
                           <% @teachers.each do |teacher| %>
                             <option value="<%= teacher.full_name %>"><%= teacher.full_name %></option>
                           <% end %>
@@ -31,7 +32,7 @@
                       <label class="control-label">Student Standard</label>
                       <span class="help">e.g. "Class 1"</span>
                       <div class="controls">
-                        <select id="student_standard" style="width:100%" multiple>
+                        <select id="student_standard" name="student_standards[]" style="width:100%" multiple>
                           <% @standards.each do |standard| %>
                             <option value="<%= standard %>"><%= standard %></option>
                           <% end %>
@@ -42,7 +43,7 @@
                       <label class="control-label">Student Section</label>
                       <span class="help">e.g. "Section D"</span>
                       <div class="controls">
-                        <select id="student_section" style="width:100%" multiple>
+                        <select id="student_section" name="student_sections[]" style="width:100%" multiple>
                           <% @sections.each do |section| %>
                             <option value="<%= section %>"><%= section %></option>
                           <% end %>
@@ -53,7 +54,7 @@
                       <label class="control-label">Non Teachers</label>
                       <span class="help">e.g. "Driver"</span>
                       <div class="controls">
-                        <select id="non_teachers" style="width:100%" multiple>
+                        <select id="non_teachers" name="non_teachers[]" style="width:100%" multiple>
                           <% @non_teachers.each do |non_teacher| %>
                             <option value="<%= non_teacher.full_name %>"><%= non_teacher.full_name %></option>
                           <% end %>
