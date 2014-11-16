@@ -9,9 +9,5 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require animate.min
- *= require responsive
- *= require style
- *= require custom-icon-set
  *= require_tree .
  */
