@@ -41,14 +41,18 @@
                 STUDENTS
               </div>  
               <div class="heading">
-                <span class="animate-number" data-value="60" data-animation-duration="1000">60</span>
+                <span class="animate-number" data-value="<%= @students.count %>" data-animation-duration="1000">
+                <%= @students.count %>
+                </span>
               </div>
               <div class="progress transparent progress-white progress-small no-radius">
                 <div class="bar animate-progress-bar" data-percentage="79%" ></div>
               </div>        
               <div class="description">
                 <i class="icon-custom-up"></i>
-                <span class="text-white mini-description ">&nbsp; updated <span class="blend">just ago</span></span>
+                <% unless @last_student.blank? %>
+                  <span class="text-white mini-description ">&nbsp; updated <span class="blend"><%= time_ago_in_words(@last_student.created_at) %> &nbsp;ago</span></span>
+                <% end %>
               </div>  
             </div>
           </div>
@@ -65,14 +69,19 @@
                 TEACHING STAFFS
               </div>  
               <div class="heading">
-                <span class="animate-number" data-value="20" data-animation-duration="1200">20</span> 
+                <span class="animate-number" data-value="<%= @teachers.count %>" data-animation-duration="1200">
+                <%= @teachers.count %>
+                </span> 
               </div>
               <div class="progress transparent progress-white progress-small no-radius">
-                <div class="bar animate-progress-bar" data-percentage="45%" ></div>
+                <div class="bar animate-progress-bar" data-percentage="100%" ></div>
               </div>
               <div class="description">
                 <i class="icon-custom-up"></i>
-                <span class="text-white mini-description ">&nbsp; updated <span class="blend">just ago</span></span>
+                <% unless @last_teacher.blank? %>
+                  <span class="text-white mini-description ">&nbsp; updated <span class="blend">
+                  <%= time_ago_in_words(@last_teacher.created_at) %> &nbsp;ago</span></span>
+                <% end %>
               </div>  
             </div>
           </div>
@@ -90,15 +99,21 @@
               </div>  
               <div class="row-fluid">
                 <div class="heading">
-                  <span class="animate-number" data-value="10" data-animation-duration="700">10</span> 
+                  <span class="animate-number" data-value="<%= @non_teachers.count %>" data-animation-duration="700">
+                  <%= @non_teachers.count %>
+                  </span> 
                 </div>
                 <div class="progress transparent progress-white progress-small no-radius">
-                  <div class="bar animate-progress-bar" data-percentage="10%"></div>
+                  <div class="bar animate-progress-bar" data-percentage="100%"></div>
                 </div>
               </div>
               <div class="description">
                 <i class="icon-custom-up"></i>
-                <span class="text-white mini-description ">&nbsp; updated <span class="blend">just ago</span></span>
+                <% unless @last_non_teacher.blank? %>
+                  <span class="text-white mini-description ">&nbsp; updated <span class="blend">
+                    <%= time_ago_in_words(@last_non_teacher.created_at) %> &nbsp;ago
+                  </span></span>
+                <% end %>
               </div>
             </div>
           </div>

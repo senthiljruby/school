@@ -3,11 +3,15 @@
   <div class="content">
     <div id="container">
       <div class="row-fluid">
-        <%= form_tag wishes_send_message_path do %>
+        <%= form_tag alerts_send_message_path do %>
           <div class="span10">
             <div class="grid simple">
               <div class="grid-title no-border">
-                <h4>Add new Student</h4>
+                <h4>Quick SMS</h4>
+                <div class="tools"> 
+                  <a href="javascript:;" class="collapse"></a>
+                  <a href="javascript:;" class="reload"></a>
+                </div>
               </div>
               <div class="grid-body no-border"> <br>
                 <div class="row-fluid">
@@ -23,7 +27,7 @@
                       <label class="control-label">Message</label>
                       <span class="help">e.g. "Hi !!! Good Morning"</span>
                       <div class="controls">
-                        <%= text_area_tag :messages, nil, :class=>"span12", :placeholder => "Address", :rows => "10"  %>
+                        <%= text_area_tag :messages, nil, :class=>"span12", :placeholder => "Messages", :rows => "10"  %>
                       </div>
                     </div>
                     <button class="btn btn-primary" type="submit">Send</button>
@@ -38,6 +42,9 @@
           <div class="grid simple">
             <div class="grid-title no-border">
               <h4>Message Preview</h4>
+              <div class="tools"> 
+                <a href="javascript:;" class="collapse"></a>
+              </div>
               <hr/>
             </div>
             <div class="grid-body no-border"> <br>

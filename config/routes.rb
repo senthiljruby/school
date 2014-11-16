@@ -23,7 +23,8 @@ SchoolManagementSystem::Application.routes.draw do
   get "log_in" => "sessions#new", :as => "log_in"
   get "log_out" => "sessions#destroy", :as => "log_out"
   get "sign_up" => "users#new", :as => "sign_up"
-  post "wishes/send_message"
+  post "alerts/send_message"
+  post "alerts/send_multi_message"
 
   # devise_for :admin_users, ActiveAdmin::Devise.config
   # ActiveAdmin.routes(self)

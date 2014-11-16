@@ -24,7 +24,11 @@ $(document).ready(function(){
     $("#source_section").select2();
 	  
 	  //Multiselect - Select2 plug-in
-	  $("#multi").val(["Jim","Lucy"]).select2();
+	  $("#teachers").val([]).select2();
+	  $("#student_standard").val([]).select2();
+	  $("#student_section").val([]).select2();
+	  $("#non_teachers").val([]).select2();
+
 	  
 	  //Date Pickers
 	  $('.input-append.date').datepicker({
