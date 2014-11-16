@@ -17,15 +17,17 @@
                 TOTAL SMS SENT
               </div> 
               <div class="heading">
-                <span class="animate-number" data-value="10" data-animation-duration="1000">10</span>  
+                <span class="animate-number" data-value="<%= @sms.count %>" data-animation-duration="1000"><%= @sms.count %></span>  
               </div>
               <div class="progress transparent progress-white progress-small no-radius">
                 <div class="bar animate-progress-bar" data-percentage="100%"></div>
               </div>          
               <div class="description">
                 <i class="icon-custom-up"></i>
-                <span class="text-white mini-description ">&nbsp; updated <span class="blend">just ago</span></span>
-              </div>
+                <% unless @last_sms.blank? %>
+                  <span class="text-white mini-description ">&nbsp; updated <span class="blend"><%= time_ago_in_words(@last_sms.created_at) %> &nbsp;ago</span></span>
+                <% end %>
+              </div> 
             </div>  
           </div>
         </div>
@@ -212,54 +214,18 @@
               LATEST NOTIFICATIONS
             </div>              
             </br>
-            <div class="notification-messages info">
-              <div class="user-profile">
-                <img src="/img/profiles/c.jpg" data-src="/img/profiles/c.jpg" data-src-retina="/img/profiles/c2x.jpg" width="35" height="35">
-              </div>
-              <div class="message-wrapper">
-                <div class="heading">
-                  School Meeting
+            <% @sms.each do |sms| %>
+              <div class="notification-messages info">
+                <div class="message-wrapper">
+                  <div class="heading">Message : 
+                    <%= sms.message %>
+                  </div>
                 </div>
-                <div class="description">
-                  Meeting postponed to tomorrow
-                </div>
-              </div>
-              <div class="date pull-right">
-                Just now
-              </div>
-            </div>
-            <div class="notification-messages danger">
-              <div class="iconholder">
-                <i class="icon-warning-sign"></i>
-              </div>
-              <div class="message-wrapper">
-                <div class="heading">
-                  Leave SMS
-                </div>
-                <div class="description">
-                  Leave scheduled for students due to Thane Storm at Puducherry
+                <div class="date pull-right">
+                  <%= time_ago_in_words(sms.created_at) %>
                 </div>
               </div>
-              <div class="date pull-right">
-              Yesterday
-              </div>
-            </div>  
-            <div class="notification-messages success">
-              <div class="user-profile">
-                <img src="/img/profiles/h.jpg" data-src="/img/profiles/h.jpg" data-src-retina="/img/profiles/h2x.jpg" width="35" height="35">
-              </div>
-              <div class="message-wrapper">
-                <div class="heading">
-                  Teachers Meeting
-                </div>
-                <div class="description">
-                  All Teachers should assemble in Hall at 2pm.
-                </div>
-              </div>
-              <div class="date pull-right">
-              Yesterday
-              </div>
-            </div>                
+            <% end %>        
           </div>
         </div>          
       </div>  
