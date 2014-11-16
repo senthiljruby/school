@@ -4570,7 +4570,8 @@ box-shadow: inset 0px 1px 2px 0px rgba(0,0,0,0.11)!important;
 .notification-messages .message-wrapper{
 	display:inline-block;
 	width:70%;
-	 height: 43px;
+  min-height: 20px;
+	 /*height: 43px;*/
 }
 
 .notification-messages .message-wrapper .heading{

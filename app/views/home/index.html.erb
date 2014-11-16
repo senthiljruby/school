@@ -130,19 +130,21 @@
               <a href="javascript:;" class="remove"></a>
             </div>
             <div class="tiles-title">
-              BIRTHDAY BABY
+              BIRTHDAY BABY <strong><%= Date.today.strftime("%d/%m/%Y") %></strong>
             </div>
             </br>
-            <div class="notification-messages info">
-              <div class="message-wrapper">
-                <div class="heading">
-                  School Meeting
+            <% @birthday_name.each_with_index do |birthday_name, index| %>
+              <div class="notification-messages info">
+                <div class="message-wrapper">
+                  <div class="heading">
+                    <%= birthday_name %>
+                  </div>
                 </div>
-                <div class="description">
-                  Meeting postponed to tomorrow
+                <div class="date pull-right">
+                  <%= @birthday_role[index] %>
                 </div>
               </div>
-            </div>                
+            <% end %>           
           </div>
         </div>          
       </div>  
@@ -154,7 +156,7 @@
               <a href="javascript:;" class="remove"></a>                  
             </div>
             <div class="tiles-title">
-              JOB ANNIVERSARY
+              JOB ANNIVERSARY <strong><%= Date.today.strftime("%d/%m/%Y") %></strong>
             </div>              
             </br>
             <div class="notification-messages info">
@@ -179,7 +181,7 @@
               <a href="javascript:;" class="remove"></a>                  
             </div>
             <div class="tiles-title">
-              WEDDING ANNIVERSARY
+              WEDDING ANNIVERSARY <strong><%= Date.today.strftime("%d/%m/%Y") %></strong>
             </div>              
             </br>
             <div class="notification-messages info">
