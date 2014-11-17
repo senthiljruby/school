@@ -90,4 +90,30 @@ class HomeController < ApplicationController
       @wedding_anniversary_role << non_teachers_wedding_anniversary.role
     end
   end
+
+  def account
+    @user = User.find(current_user.id)
+    @setting = Settings.first
+    @setting = Settings.new if @setting.blank?
+  end
+
+  def user_profile
+    @user = User.find(current_user.id)
+    if @user.update_attributes(params[:users])
+      flash[:notice] = "Success"
+      redirect_to home_account_path
+    else
+      render home_account_path
+    end
+  end
+
+  def settings
+    @settings = Settings.find_or_initialize_by_username(params[:settings][:username])
+    if @settings.update_attributes(params[:settings])
+      flash[:notice] = "Success"
+      redirect_to home_account_path
+    else
+      render home_account_path
+    end
+  end
 end

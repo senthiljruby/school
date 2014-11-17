@@ -30,6 +30,9 @@ SchoolManagementSystem::Application.routes.draw do
   # ActiveAdmin.routes(self)
   
   get "home/index"
+  get "home/account"
+  post "home/user_profile"
+  post "home/settings"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

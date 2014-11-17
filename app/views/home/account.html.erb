@@ -1,0 +1,128 @@
+<!-- BEGIN PAGE CONTAINER-->
+<div class="page-content">
+  <div class="content">  
+    <div class="page-title">  
+      <h3>Account Page</h3>   
+    </div>
+    <div id="container">
+      <div class="span6">
+        <div class="grid simple">
+          <div class="grid-title">
+            <h4>User <span class="semi-bold">Profile</span></h4>
+            <div class="tools"> 
+              <a href="javascript:;" class="collapse"></a>
+              <a href="javascript:;" class="reload"></a>
+            </div>
+          </div>
+          <div class="grid-body ">
+            <div class="row-fluid">
+              <%= form_tag home_user_profile_path  do %>
+                <% if @user.errors.any? %>
+                  <div class="alert">
+                    <button class="close" data-dismiss="alert"></button>
+                  <h2>Form is invalid</h2>
+                  <ul>
+                    <% for message in @user.errors.full_messages %>
+                      <li><%= message %></li>
+                    <% end %>
+                  </ul>
+                  </div>
+                <% end %>
+                <div class="span8">
+                  <div class="control-group">
+                    <label class="control-label">User Name</label>
+                    <span class="help">e.g. "senthil"</span>
+                    <div class="controls">
+                      <input type="text" name="users[username]" class="span12" value = "<%= @user.username %>" />
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">Full Name</label>
+                    <span class="help">e.g. "Senthil Kumar Bhaskaran"</span>
+                    <div class="controls">
+                      <input type="text" name="users[fullname]" class="span12" value="<%= @user.fullname %>" />
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">Email</label>
+                    <span class="help">e.g. "senthil@example.com"</span>
+                    <div class="controls">
+                      <input type="text" name="users[email]" class="span12" value="<%= @user.email %>" />
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">Password</label>
+                    <span class="help">e.g. "****"</span>
+                    <div class="controls">
+                      <input type="password" name="users[password]" class="span12" />
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">Password Confirmation</label>
+                    <span class="help">e.g. "****"</span>
+                    <div class="controls">
+                      <input type="password" name="users[password_confirmation]" class="span12" />
+                    </div>
+                  </div>
+                  <button class="btn btn-primary" type="submit">Update</button>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="span6">
+        <div class="grid simple">
+          <div class="grid-title">
+            <h4>Settings <span class="semi-bold">Profile</span></h4>
+            <div class="tools"> 
+              <a href="javascript:;" class="collapse"></a>
+              <a href="javascript:;" class="reload"></a>
+            </div>
+          </div>
+          <div class="grid-body ">
+            <div class="row-fluid">
+              <%= form_tag home_settings_path  do %>
+                <% if @setting.errors.any? %>
+                  <div class="alert">
+                    <button class="close" data-dismiss="alert"></button>
+                    <h2>Form is invalid</h2>
+                    <ul>
+                      <% for message in @setting.errors.full_messages %>
+                        <li><%= message %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                <% end %>
+                <div class="span8">
+                  <div class="control-group">
+                    <label class="control-label">User Name</label>
+                    <span class="help">e.g. "senthil"</span>
+                    <div class="controls">
+                      <input type="text" name="settings[username]" class="span12" value="<%= @setting.username %> "/>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">Password</label>
+                    <span class="help">e.g. "******"</span>
+                    <div class="controls">
+                      <input type="text" name="settings[password]" class="span12" value="<%= @setting.password %>" />
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">Signature</label>
+                    <span class="help">e.g. "School Name"</span>
+                    <div class="controls">
+                      <input type="text" name="settings[signature]" class="span12" value="<%= @setting.signature %>" />
+                    </div>
+                  </div>
+                  <button class="btn btn-primary" type="submit">Update</button>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
