@@ -134,7 +134,7 @@ Page sidebar
 
 .page-sidebar.mini > ul > li >a:hover, 
 .page-sidebar.mini > ul > li:hover >a {  
-  background: #0b9c8f;
+  background: #0090d9;
 }
 .page-sidebar.mini  > ul > li > ul.sub-menu{
 	position:absolute;
@@ -643,6 +643,7 @@ hr {
 
 .header .header-quick-nav{
     padding-right: 10px;
+    padding-bottom: 60px;
 }
 .header .notifcation-center{
 	background-color:#1b1e24;
@@ -1389,7 +1390,9 @@ display:none;
 }
 
 .page-sidebar.mini{
-	 background-color: #0aa699 !important;
+	 /*background-color: #0aa699 !important;*/
+   background-color: #155194 !important;
+   /*background-color: #736086 !important;*/
     height: 100%;
 	margin-top:0;
 	position:absolute;
