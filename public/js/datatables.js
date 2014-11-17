@@ -157,14 +157,9 @@ $(document).ready(function() {
     tableElement.dataTable( {
 		"sDom": "<'row-fluid'<'span6'l T><'span6'f>r>t<'row-fluid'<'span12'p i>>",
 			"oTableTools": {
-			"aButtons": [
-				{
-					"sExtends":    "collection",
-					"sButtonText": "<i class='icon-cloud-download'></i>",
-					"aButtons":    [ "csv", "xls", "pdf", "copy"]
-				}
-			]
+			"aButtons": []
 		},
+    "bFilter": false, "bInfo": false,
 		"sPaginationType": "bootstrap",
 		 "aoColumnDefs": [
           { 'bSortable': false, 'aTargets': [ 0 ] }
