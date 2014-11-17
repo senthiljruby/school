@@ -14,7 +14,7 @@ class AlertsController < ApplicationController
   def send_message
     setting = Settings.first
     waysms = WaySms::SmsSender.new(setting.username, setting.password)
-    waysms.send(params[:mobile_number], "#{params[:messages]} - by vetri School")
+    waysms.send(params[:mobile_number], "#{params[:messages]} - by #{setting.signature}")
     Sms.create(:message => params[:messages])
     flash[:notice] = "Message Send Successfully"
     redirect_to alerts_quick_sms_path
@@ -70,7 +70,7 @@ class AlertsController < ApplicationController
     setting = Settings.first
     waysms = WaySms::SmsSender.new(setting.username, setting.password)
     mobile_numbers.uniq!.each do |mobile_number|  
-      waysms.send(mobile_number, "#{params[:messages]} - by vetri School")
+      waysms.send(mobile_number, "#{params[:messages]} - by #{setting.signature}")
     end
     Sms.create(:message => params[:messages])
     flash[:notice] = "Message Send Successfully"
