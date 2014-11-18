@@ -80,3 +80,23 @@
   <!-- END TOP NAVIGATION MENU --> 
 </div>
 <!-- END TOP NAVIGATION BAR --> 
+
+<div id="sidr">
+  <div class="chat-window-wrapper">
+    <div class="chat-header"></div>  
+    <div class="side-widget">
+      <div class="side-widget-title">
+        Welcome <span class="bold"><%= current_user.blank? ? 'Guest' : current_user.username %>
+        </span>      
+      </div>
+      <div class="side-widget-content">
+        <div id="groups-list">
+          <ul class="groups" >
+            <li><a href="/home/account"><div class="status-icon green"></div>My Account</a></li>
+            <li><a href="/log_out"><div class="status-icon green"></div>Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
